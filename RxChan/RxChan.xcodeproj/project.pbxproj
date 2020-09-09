@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		AB27AF1A250918840013DF31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB27AF18250918840013DF31 /* Main.storyboard */; };
 		AB27AF1C250918860013DF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB27AF1B250918860013DF31 /* Assets.xcassets */; };
 		AB27AF1F250918860013DF31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB27AF1D250918860013DF31 /* LaunchScreen.storyboard */; };
+		AB27AF282509301D0013DF31 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27AF272509301D0013DF31 /* APIService.swift */; };
+		AB27AF2A250931600013DF31 /* Model.json in Resources */ = {isa = PBXBuildFile; fileRef = AB27AF29250931600013DF31 /* Model.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AB27AF1B250918860013DF31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB27AF1E250918860013DF31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB27AF20250918860013DF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB27AF272509301D0013DF31 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AB27AF29250931600013DF31 /* Model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Model.json; sourceTree = "<group>"; };
 		D7C7C818783884AE75261612 /* Pods-RxChan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChan.debug.xcconfig"; path = "Target Support Files/Pods-RxChan/Pods-RxChan.debug.xcconfig"; sourceTree = "<group>"; };
 		F78D1A5C1DB356A1E4F645DD /* Pods-RxChan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChan.release.xcconfig"; path = "Target Support Files/Pods-RxChan/Pods-RxChan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +52,6 @@
 				D7C7C818783884AE75261612 /* Pods-RxChan.debug.xcconfig */,
 				F78D1A5C1DB356A1E4F645DD /* Pods-RxChan.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +84,7 @@
 		AB27AF11250918840013DF31 /* RxChan */ = {
 			isa = PBXGroup;
 			children = (
+				AB27AF2625092FEF0013DF31 /* Model */,
 				AB27AF12250918840013DF31 /* AppDelegate.swift */,
 				AB27AF14250918840013DF31 /* SceneDelegate.swift */,
 				AB27AF16250918840013DF31 /* ViewController.swift */,
@@ -90,6 +94,15 @@
 				AB27AF20250918860013DF31 /* Info.plist */,
 			);
 			path = RxChan;
+			sourceTree = "<group>";
+		};
+		AB27AF2625092FEF0013DF31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB27AF272509301D0013DF31 /* APIService.swift */,
+				AB27AF29250931600013DF31 /* Model.json */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +168,7 @@
 				AB27AF1F250918860013DF31 /* LaunchScreen.storyboard in Resources */,
 				AB27AF1C250918860013DF31 /* Assets.xcassets in Resources */,
 				AB27AF1A250918840013DF31 /* Main.storyboard in Resources */,
+				AB27AF2A250931600013DF31 /* Model.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +223,7 @@
 			files = (
 				AB27AF17250918840013DF31 /* ViewController.swift in Sources */,
 				AB27AF13250918840013DF31 /* AppDelegate.swift in Sources */,
+				AB27AF282509301D0013DF31 /* APIService.swift in Sources */,
 				AB27AF15250918840013DF31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
