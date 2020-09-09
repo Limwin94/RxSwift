@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import RxSwift
 
 class MenuTableViewCell: UITableViewCell {
+    static let identifier = "MenuTableViewCell"
+    
     @IBOutlet weak var menuLabel: UILabel!
-
 }

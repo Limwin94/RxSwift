@@ -1,5 +1,5 @@
 //
-//  MenuViewModel.swift
+//  Cellmenu.swift
 //  RxChan
 //
 //  Created by 임승혁 on 2020/09/10.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class MenuViewModel {
-    
+struct Cellmenu {
+    var menuName: String
 }

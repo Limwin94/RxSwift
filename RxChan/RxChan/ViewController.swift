@@ -14,7 +14,6 @@ final class ViewController: UIViewController {
     // MARK: - Properties
     let viewModel = MenuViewModel()
     let disposeBag = DisposeBag()
-    let cellID = "MenuTableViewCell"
     
     // MARK: - IBOutlet
     @IBOutlet weak var menuTableView: UITableView!
@@ -22,26 +21,21 @@ final class ViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuTableView.dataSource = self
-        menuTableView.delegate = self
-    }
-}
-
-// MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        bind()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+    private func bind() {
+        bindTableView()
+    }
+    
+    private func bindTableView() {
+        viewModel.menuObservable
+            .observeOn(MainScheduler.instance)
+            .bind(to: menuTableView.rx.items(cellIdentifier: MenuTableViewCell.identifier,
+                                             cellType: MenuTableViewCell.self)) { _, item, cell in
+                                                
+                                                cell.menuLabel.text = item.menuName
+                                                
+        }.disposed(by: disposeBag)
     }
 }
-
-// MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate {
-    
-}
-
-
-
