@@ -10,4 +10,15 @@ import Foundation
 
 struct Cellmenu {
     var menuName: String
+    var description: String
+    
+    init(_ item: Model) {
+        self.menuName = item.body.title
+        self.description = item.body.description
+    }
+    
+    init(title: String, description: String) {
+        self.menuName = title
+        self.description = description
+    }
 }

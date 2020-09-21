@@ -21,7 +21,7 @@ enum APIServiceError: String, Error {
     case modelTypeCastingError = "값을 받아오는 도중 오류가 발생했습니다."
 }
 
-class APIService {
+final class APIService {
     // request 세부 설정을 위해 따로 빼놓음.
     static func request(url: String) -> URLRequest? {
         guard let url = URL(string: url) else { return nil }

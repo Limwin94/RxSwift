@@ -10,14 +10,29 @@ import Foundation
 import RxSwift
 
 class MenuViewModel {
-    let menuObservable = BehaviorSubject<[Cellmenu]>(value: [])
+//    let fetchMenus: AnyObserver<Void>
+//    let allMenus: Observable<Cellmenu> 
+//    
+//    let disposeBag = DisposeBag()
     
     init() {
-        // fetch해서 onNext해주는 걸로 변경.
-        let mockMenu = [Cellmenu(menuName: "[미노리키친] 규동 250g"),
-                        Cellmenu(menuName: "[빅마마의밥친구] 아삭 고소한 연근고기조림 250g"),
-                        Cellmenu(menuName: "[소중한식사] 골뱅이무침 195g")]
+        let menus = BehaviorSubject<Cellmenu>(value: Cellmenu(title: "", description: ""))
+        let fetching = PublishSubject<Void>()
+        fetchMenus = fetching.asObserver()
+        let aa = fetching.flatMap { APIService.fetchEachMenu(url: EndPoints.main.rawValue)
+        }.map { model -> Cellmenu in
+            return Cellmenu(model)
+        }
+        fetching
+            .flatMap { APIService.fetchEachMenu(url: EndPoints.main.rawValue) }
+            .map { model in
+                Cellmenu(model)
+            }
+        .do(onNext: model )
+            .do(onError: { err in menus.onError(err) })
+            .subscribe(onNext: menus.onNext)
+            .disposed(by: disposeBag)
         
-        menuObservable.onNext(mockMenu)
+        allMenus = menus
     }
 }
